@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Utility Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Text Utility Tool</h1>
+<p>Clean text, count words, and analyze characters.</p>
+
+<form method="POST">
+    <textarea name="text" rows="10" placeholder="Paste your text here..."></textarea>
+    <br><br>
+    <button type="submit">Analyze Text</button>
+</form>
+
+{% if result %}
+<hr>
+<h3>Results</h3>
+<p><strong>Word Count:</strong> {{ result.word_count }}</p>
+<p><strong>Character Count:</strong> {{ result.char_count }}</p>
+
+<h4>Cleaned Text</h4>
+<textarea rows="6">{{ result.cleaned_text }}</textarea>
+{% endif %}
+
+</body>
+</html>
 
